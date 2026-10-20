@@ -1,0 +1,56 @@
+LUBRIGEST - DEMO DEL SISTEMA
+Ingenieria de Software II - UNER - Grupo 11
+============================================
+
+NO NECESITA INTERNET. Todo corre en la propia computadora.
+
+COMO EMPEZAR
+  Opcion A (recomendada, necesita Node.js):
+    Windows:   doble clic en  iniciar.bat
+    Mac/Linux: ./iniciar.sh   (o escribir:  node server.js)
+    Se abre solo el navegador en  http://localhost:3000
+    Los datos se guardan en la carpeta  data  (archivo db.json).
+
+  Opcion B (sin instalar nada):
+    Doble clic en  index.html
+    Funciona igual, pero los datos quedan guardados en ese navegador.
+
+USUARIOS (la clave de todos es  Demo1234)
+  ceo            CEO
+  gerente        Gerente Administrativa
+  mecanico1      Mecanico   (tambien mecanico2)
+  jperez         Cliente Juan Perez  (tambien agomez, crios)
+  rfernandez     Usuario suspendido -> muestra "acceso denegado"
+  En la pantalla de ingreso hay botones para entrar directo con cada rol.
+
+GUION SUGERIDO PARA LA DEMOSTRACION (5 minutos)
+  1. Boton "Demo" > "Abrir otra ventana". Cada ventana tiene su propia sesion:
+     una como Cliente (Juan Perez) y otra como Gerente Administrativa.
+  2. Cliente: en "Proximos servicios" tocar "Reservar turno", elegir un horario
+     libre y reservar. En la ventana de la Gerente aparece al instante en la
+     agenda (resaltado) con un aviso. La Gerente lo confirma y el cliente
+     recibe el aviso de confirmacion.
+  3. Mecanico (tercera ventana): tocar el turno de las 09:30 > "Registrar
+     servicio". Se descuenta el stock y la Gerente ve el servicio pendiente de cobro.
+  4. Gerente: "Cobrar" > medio de pago > comprobante (se puede imprimir).
+     El CEO ve el cobro en su panel.
+  5. Alertas: "Demo" > "+7 dias". Aparecen nuevos vencimientos y se envian los
+     recordatorios a los clientes. Despues "Volver a hoy".
+  6. Validaciones: clientes con telefono repetido, patente duplicada, stock
+     insuficiente, suspender con confirmacion, horario que se ocupa mientras
+     otra persona lo estaba eligiendo.
+
+DATOS
+  - Se guardan solos en cada cambio.
+  - Para volver a los datos de ejemplo: "Demo" > "Restablecer datos de ejemplo"
+    (o borrar data/db.json con el servidor apagado).
+  - "Demo" > "Exportar JSON" / "Importar JSON" guarda y recupera un estado.
+
+OTROS COMANDOS
+  node server.js --port 8080     usar otro puerto (si el 3000 esta ocupado, usa el siguiente solo)
+  node server.js --lan           mostrar la demo desde otra compu/celular de la misma red
+  node server.js --no-open       no abrir el navegador automaticamente
+  Para apagar el servidor: Ctrl + C
+
+REQUISITOS
+  Un navegador actualizado (Chrome, Edge o Firefox). Node.js solo para la opcion A.

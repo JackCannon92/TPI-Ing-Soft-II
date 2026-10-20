@@ -1,0 +1,8 @@
+{
+  "name": "lubrigest-demo",
+  "version": "1.0.0",
+  "description": "Demo de LubriGest: gestion de turnos, servicios y stock para un lubricentro. Sin dependencias.",
+  "private": true,
+  "scripts": { "start": "node server.js" },
+  "license": "UNLICENSED"
+}
